@@ -1,0 +1,49 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Dali
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-linux:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install hatch
+        pip install -e .
+        pip uninstall --yes pillow
+        CC="cc -mavx2" pip install -U --force-reinstall pillow-simd
+    - name: Tests
+      run: |
+        python -m pip install pytest pytest-cov
+        hatch run test
+        hatch run cov
+    - name: Lint
+      run: |
+        hatch run lint:all
+    - name: Doc generate
+      run: |
+        python -m pip install pdoc
+        pdoc --show-source --logo ../static/logo.png --search ./src/dali_renderer -o ./docs
+    - name: Build
+      run: |
+        hatch clean
+        hatch build
