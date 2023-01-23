@@ -5,6 +5,7 @@
 ___
 <div align="center">
 
+[![Made in Ukraine](https://img.shields.io/badge/made_in-ukraine-ffd700.svg?labelColor=0057b7)](https://fz0x1.wtf)
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch) 
 [![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json)](https://github.com/charliermarsh/ruff)
 [![code style - Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
@@ -21,7 +22,7 @@ ___
 It can render any[*](https://gist.github.com/foozzi/d1fd955f7b986a0605d6c3322e179500) source code into an image.
 
 ![Dali](https://i.imgur.com/EQl0Kid.png)
-> Image: [httpie source code](https://github.com/httpie/httpie/blob/master/httpie/encoding.py) (*Dali v.0.0.1*)
+> Image: [httpie source code](https://github.com/httpie/httpie/blob/master/httpie/encoding.py) (*Dali v1.0.0-beta1*)
 > 
 > arguments: `window_controls=True`, `background='#576574'`
 
