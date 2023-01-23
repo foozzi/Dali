@@ -21,7 +21,7 @@ ___
 It can render any[*](https://gist.github.com/foozzi/d1fd955f7b986a0605d6c3322e179500) source code into an image.
 
 ![Dali](https://i.imgur.com/EQl0Kid.png)
-> Image: [httpie source code](https://github.com/httpie/httpie/blob/master/httpie/encoding.py) (*Dali v.0.0.1*)
+> Image: [httpie source code](https://github.com/httpie/httpie/blob/master/httpie/encoding.py) (*Dali v1.0.0-beta1*)
 > 
 > arguments: `window_controls=True`, `background='#576574'`
 
@@ -39,7 +39,7 @@ You can use it in your project and create a great image of your code.
 *from file*
 
 ```python
-from main import Dali
+from dali_renderer import Dali
 
 instance = Dali("<path to save image>/image.png", window_controls=True, background='#576574')
 instance.from_file("<path to source code file>")
@@ -47,7 +47,7 @@ instance.from_file("<path to source code file>")
 *from string*
 
 ```python
-from main import Dali
+from dali_renderer import Dali
 
 instance = Dali("<path to save image>/image.png", window_controls=True, background='#576574')
 with open("<path to source code file>", 'r') as file:
