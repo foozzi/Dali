@@ -2,6 +2,9 @@
 <img src="https://i.imgur.com/wU1s5Dn.png" width="500" />
 </p>
 
+# Beta version
+Required dependencies when installing Dali are not checked on all OS
+
 ___
 <div align="center">
 
